@@ -12,7 +12,7 @@ const appRoot = document.getElementById("app-root");
 
 const store = createStore(allReducers);
 
-function showmodal(state =[], action){
+function showmodal(state = store.modal, action){
     if(action.type ==='CHANGE_STATE'){
         return[
             ...state,
@@ -31,8 +31,20 @@ store.dispatch({
 
 });
 store.dispatch({
-    type: 'CHANGE_STATE', showModal: 'false',
+    type: 'CHANGE_STATE', showModal: 'true',toCreate: 'false',toUpdate: 'true',
+    toDelete: 'false',
+});
 
+store.dispatch({
+
+  type: 'CHANGE_STATE',  showModal: 'true',toCreate: 'false',toUpdate: 'false',
+    toDelete: 'true',
+});
+
+store.dispatch({
+
+   type: 'CHANGE_STATE', showModal: 'false',toCreate: 'false',toUpdate: 'false',
+    toDelete: 'false',
 });
 ReactDOM.render(
     <Provider store={store}>
