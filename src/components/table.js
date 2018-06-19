@@ -59,7 +59,7 @@ export class Table extends React.Component {
                 null;
             }
 
-
+ 
             
 
     render() {
@@ -71,8 +71,8 @@ export class Table extends React.Component {
         } else {
             return (
 
-
-                <table  >
+                      
+                <table >
                     <thead>
                         <tr>
                             <th>Id
