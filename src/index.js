@@ -4,22 +4,15 @@ import './index.css';
 import {connect, Provider} from 'react-redux';
 import {Window} from './components/window';
 import {createStore} from 'redux';
-import allReducers from './reducers/modal';
+import allReducers from './reducers';
 
 const appRoot = document.getElementById("app-root");
  export const modalRoot = document.getElementById("modal-root");
  export const PathBase =`http://localhost:3002/api/employees/`;
 
-const store = createStore(allReducers);
+const store = createStore(allReducers,  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-function showmodal(state = store.modal, action){
-    if(action.type ==='CHANGE_STATE'){
-        return[
-            ...state,
-            action.showModal,
-        ]
-    }
-}
+
 
 
 store.subscribe(()=>{

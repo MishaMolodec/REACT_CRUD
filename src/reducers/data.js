@@ -2,11 +2,10 @@
 
 
 export default function () {
-    return [
-        {
+    return {
             error: null,
             isLoaded: false,
             data: [],
         }
-    ]
+    
 }
